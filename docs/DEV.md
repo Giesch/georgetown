@@ -37,13 +37,19 @@ island.
 
 Tests use `hyperfiddle.rcf` , inline with the functions they test.
 
+## Local performance measurements
+
+See [ISLAND_PERF.md](ISLAND_PERF.md) for the isolated synthetic island benchmark,
+its unattended harness tests, and measurement limitations. It does not use your
+configured database or start the server.
+
 ## Build
 
 `lein uberjar`
 
 ## The core loop
 
-1. `server/scheduler.clj` ticks each island once per second (`chime`).
+1. `server/scheduler.clj` ticks islands sequentially every five seconds (`chime`).
 2. On any transaction, `db/watchers` fire and `push/on-db-change!` recomputes
    the per island, user and player state, then sends diffs to the connected
    clients.
