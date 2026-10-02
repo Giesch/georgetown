@@ -37,6 +37,12 @@ island.
 
 Tests use `hyperfiddle.rcf` , inline with the functions they test.
 
+## Full-tick benchmarks
+
+See [TICK_BENCH.md](TICK_BENCH.md) for isolated development-only benchmarks,
+correctness tests, CLI/REPL commands, and saved report regeneration. A quick
+integration check is `lein run -m georgetown.dev.tick-bench --smoke`.
+
 ## Build
 
 `lein uberjar`

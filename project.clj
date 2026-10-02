@@ -39,7 +39,9 @@
   :plugins [[io.bloomventures/omni "0.34.0"]]
   :omni-config georgetown.server.omni-config/omni-config
   :profiles {:dev
-             {:source-paths ["dev-src"]}
+             {:source-paths ["dev-src"]
+               :dependencies [[com.sagevisuals/fastester "1"
+                               :exclusions [org.clojure/clojure]]]}
              :uberjar
              {:aot [georgetown.core]
               :prep-tasks ["javac"
